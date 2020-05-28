@@ -10,10 +10,15 @@ A simple python script that spams a message to a contact as many times as you wa
 * [GeckoDriver](https://github.com/mozilla/geckodriver/releases)
 * Mozilla Firefox
 
-GeckoDriver must be moved in PATH
-
 ### Installing
 Install dependecies
 ```shell
 pip3 install -r requirements.txt
+```
+
+Move GeckoDriver to PATH
+
+Run it
+```shell
+python3 bomber.py
 ```
