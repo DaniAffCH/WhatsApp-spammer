@@ -1,5 +1,3 @@
-[![Build Status](https://img.shields.io/github/stars/noob-hackers/Infect.svg)](https://github.com/noob-hackers/Infect)
-[![Build Status](https://img.shields.io/github/forks/noob-hackers/Infect.svg)](https://github.com/noob-hackers/Infect)
 [![License: MIT](https://img.shields.io/github/license/noob-hackers/Infect.svg)](https://github.com/noob-hackers/Infect)
 [![Rawsec's CyberSecurity Inventory](https://inventory.rawsec.ml/img/badges/Rawsec-inventoried-FF5050_flat.svg)](https://inventory.rawsec.ml/tools.html#Infect)
 [![Stage](https://img.shields.io/badge/Release-Stable-brightgreen.svg)]()
