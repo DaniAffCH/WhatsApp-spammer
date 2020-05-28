@@ -66,8 +66,25 @@ def attack(driver):
     print("Number of times it will be sent: ")
     while True:
         n = int(input())
-        if (n>0) break
+        if (n>0):
+            break
         print("Invalid number of times, try again")
+
+
+    print("START ATTACK?[y/n]")
+    start = input()
+    if start == "y":
+        try:
+            text_field = driver.find_element(By.XPATH,"//div[@class='_2S1VP copyable-text selectable-text'][@data-tab='1']")
+            for i in range(n):
+                print("Sent "+str(i)+" messages")
+                text_field.send_keys(msg)
+                text_field.send_keys(Keys.RETURN)
+
+            print("Done!")
+        except Exception:
+            print(Exception)
+            print("ERROR!")
 
 if __name__ == "__main__":
     header()
