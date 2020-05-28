@@ -20,5 +20,5 @@ Move GeckoDriver to PATH
 
 Run it
 ```shell
-python3 bomber.py
+python3 spammer.py
 ```
