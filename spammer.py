@@ -39,9 +39,14 @@ def loadDriver():
 def login(driver):
     try:
         driver.find_element(By.XPATH, "//canvas[@aria-label='Scan me!']")
-        print("Please scan QR Code to login into WhatsApp Web, then press any enter")
-        input()
-        login(driver)
+        print("Please scan QR Code to login into WhatsApp Web")
+        while (True):
+            try:
+                driver.find_element(By.XPATH, "//canvas[@aria-label='Scan me!']")
+            except selenium.common.exceptions.NoSuchElementException:
+                print("User logged")
+                break
+        #login(driver)
     except selenium.common.exceptions.NoSuchElementException:
         print("User logged")
 
