@@ -11,7 +11,7 @@ A simple python script that spams a message to a contact as many times as you wa
 * Mozilla Firefox
 
 ### Installing
-Clone repository
+Clone the repository
 ```shell
 git clone https://github.com/DaniAffCH/WhatsaApp-spammer.git
 ```
