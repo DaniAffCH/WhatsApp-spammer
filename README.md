@@ -13,7 +13,7 @@ A simple python script that spams a message to a contact as many times as you wa
 ### Installing
 Clone repository
 ```shell
-git clone 
+git clone https://github.com/DaniAffCH/WhatsaApp-spammer.git
 ```
 
 Install dependecies
