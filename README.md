@@ -1,5 +1,6 @@
-[![License: MIT](https://img.shields.io/github/license/noob-hackers/Infect.svg)](https://github.com/DaniAffCH/WhatsaApp-spammer)
+[![License: MIT](https://img.shields.io/github/license/DaniAffCH/WhatsApp-spammer.svg)](https://github.com/DaniAffCH/WhatsaApp-spammer)
 [![Stage](https://img.shields.io/badge/Release-Stable-brightgreen.svg)]()
+[![Build](https://travis-ci.com/DaniAffCH/WhatsaApp-spammer.svg?branch=master)]()
 # WhatsaApp spammer
 A simple python script that spams a message to a contact as many times as you want
 
