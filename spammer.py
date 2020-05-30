@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.firefox.options import Options
 import selenium.common.exceptions
 import os
 
@@ -32,8 +33,15 @@ def header():
     """)
 
 def loadDriver():
+    #travis support
+    options = Options()
+    options.headless = True
+
     print("Loading gecko driver...")
-    driver = webdriver.Firefox()
+    if ('TRAVIS' not in os.environ):
+        driver = webdriver.Firefox(options=options)
+    else:
+        driver = webdriver.Firefox()
     print("Done")
     return driver
 
