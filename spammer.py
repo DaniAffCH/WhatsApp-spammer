@@ -38,7 +38,7 @@ def loadDriver():
     options.headless = True
 
     print("Loading gecko driver...")
-    if ('TRAVIS' not in os.environ):
+    if ('TRAVIS' in os.environ):
         driver = webdriver.Firefox(options=options)
     else:
         driver = webdriver.Firefox()
