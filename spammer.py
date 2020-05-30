@@ -104,5 +104,6 @@ if __name__ == "__main__":
     print("Loading WhatsApp Web")
     driver.get("https://web.whatsapp.com/")
     login(driver)
-    setVictim(driver)
-    attack(driver)
+    if ('TRAVIS' not in os.environ):
+        setVictim(driver)
+        attack(driver)
