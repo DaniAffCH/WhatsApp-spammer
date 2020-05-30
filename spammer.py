@@ -46,7 +46,7 @@ def login(driver):
             except selenium.common.exceptions.NoSuchElementException:
                 print("User logged")
                 break
-        #login(driver)
+                
     except selenium.common.exceptions.NoSuchElementException:
         print("User logged")
 
