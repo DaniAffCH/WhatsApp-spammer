@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.firefox.options import Options
 import selenium.common.exceptions
+import os
 
 def header():
     color = {
@@ -35,6 +36,7 @@ def loadDriver():
     #travis support
     options = Options()
     options.headless = True
+
     print("Loading gecko driver...")
     driver = webdriver.Firefox(options=options)
     print("Done")
@@ -44,12 +46,13 @@ def login(driver):
     try:
         driver.find_element(By.XPATH, "//canvas[@aria-label='Scan me!']")
         print("Please scan QR Code to login into WhatsApp Web")
-        while (True):
-            try:
-                driver.find_element(By.XPATH, "//canvas[@aria-label='Scan me!']")
-            except selenium.common.exceptions.NoSuchElementException:
-                print("User logged")
-                break
+        if ('TRAVIS' not in os.environ):
+            while (True):
+                try:
+                    driver.find_element(By.XPATH, "//canvas[@aria-label='Scan me!']")
+                except selenium.common.exceptions.NoSuchElementException:
+                    print("User logged")
+                    break
 
     except selenium.common.exceptions.NoSuchElementException:
         print("User logged")
