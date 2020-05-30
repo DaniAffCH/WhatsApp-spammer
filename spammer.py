@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.firefox.options import Options
 import selenium.common.exceptions
 
 def header():
@@ -31,8 +32,11 @@ def header():
     """)
 
 def loadDriver():
+    #travis support
+    options = Options()
+    options.headless = True
     print("Loading gecko driver...")
-    driver = webdriver.Firefox()
+    driver = webdriver.Firefox(options=options)
     print("Done")
     return driver
 
@@ -46,7 +50,7 @@ def login(driver):
             except selenium.common.exceptions.NoSuchElementException:
                 print("User logged")
                 break
-                
+
     except selenium.common.exceptions.NoSuchElementException:
         print("User logged")
 
