@@ -10,4 +10,4 @@ install:
   - pip install -r requirements.txt
 
 script:
-  - spammer
+  - python spammer.py
