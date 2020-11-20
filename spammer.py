@@ -66,7 +66,7 @@ def login(driver):
         print("User logged")
 
 def setVictim(driver):
-    print("Enter name of victim (also emojis must be included): ")
+    print("Enter name of victim (emojis must be included too): ")
     victim = input()
     try:
         search = driver.find_element(By.XPATH, "//div[@class='_1awRl copyable-text selectable-text'][@data-tab='3']")
