@@ -32,6 +32,11 @@ def header():
 """+color["reset"]+"""
     """)
 
+def question(quest):
+    print(str(quest)+"[y/n]")
+    ans = input()
+    return True if ans == "y" else False
+
 def loadDriver():
     #travis support
     options = Options()
@@ -61,10 +66,10 @@ def login(driver):
         print("User logged")
 
 def setVictim(driver):
-    print("Enter name of victim: ")
+    print("Enter name of victim (also emojis must be included): ")
     victim = input()
     try:
-        search = driver.find_element(By.XPATH, "//div[@class='_2S1VP copyable-text selectable-text'][@data-tab='3']")
+        search = driver.find_element(By.XPATH, "//div[@class='_1awRl copyable-text selectable-text'][@data-tab='3']")
         search.click()
         search.send_keys(victim)
         driver.find_element(By.XPATH, "//span[@title='"+victim+"']")
@@ -72,7 +77,7 @@ def setVictim(driver):
 
     except selenium.common.exceptions.NoSuchElementException:
         print("Victim not found, try again")
-        driver.find_element(By.XPATH,"//button[@class='C28xL']").click()
+        driver.find_element(By.XPATH,"//button[@class='_3Wrfs']").click()
         setVictim(driver)
 
 def attack(driver):
@@ -85,20 +90,17 @@ def attack(driver):
             break
         print("Invalid number of times, try again")
 
-
-    print("START ATTACK?[y/n]")
-    start = input()
-    if start == "y":
+    if question("START ATTACK?"):
         try:
-            text_field = driver.find_element(By.XPATH,"//div[@class='_2S1VP copyable-text selectable-text'][@data-tab='1']")
+            text_field = driver.find_element(By.XPATH,"//div[@class='_1awRl copyable-text selectable-text'][@data-tab='6']")
             for i in range(n):
                 print("Sent "+str(i)+" messages")
                 text_field.send_keys(msg)
                 text_field.send_keys(Keys.RETURN)
 
             print("Done!")
-        except Exception:
-            print(Exception)
+        except Exception as e:
+            print(e.__class__)
             print("ERROR!")
 
 if __name__ == "__main__":
@@ -108,5 +110,8 @@ if __name__ == "__main__":
     driver.get("https://web.whatsapp.com/")
     login(driver)
     if ('TRAVIS' not in os.environ):
-        setVictim(driver)
-        attack(driver)
+        while True:
+            setVictim(driver)
+            attack(driver)
+            if not question("Do you wanna attack again?"):
+                break
