@@ -21,7 +21,7 @@ Install dependecies
 ```shell
 pip3 install -r requirements.txt
 ```
-
+Install GeckoDriver
 Move GeckoDriver to PATH
 
 Run it
