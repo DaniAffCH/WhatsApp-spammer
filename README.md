@@ -22,6 +22,7 @@ Install dependecies
 pip3 install -r requirements.txt
 ```
 Install [GeckoDriver](https://github.com/mozilla/geckodriver/releases)    
+
 Move it to PATH:
 ```shell
 sudo mv geckodriver /usr/local/bin/
